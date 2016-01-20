@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+
+<head>
+    
+   <header>
+        <h1>LOGIN</h1>
+</header>
+</head>
+
+
+<body>
+<form action="{{path('login_check') }}" method="post">
+ 
+
+    
+   
+    <div class="login">
+    <input type="text" placeholder="Username" id="username" name="_username">  
+  <input type="password" placeholder="password" id="password" name="_password">  
+ {% if error %}
+    <div>{{ error.message }}</div>
+{% endif %}
+            <input  type="submit" value="Sign In">
+</div>
+<div class="shadow"></div>
+    
+</form>
+</body>   
+
+
+{% endblock %}
+

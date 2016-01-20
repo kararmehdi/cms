@@ -1,0 +1,42 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        Custom\CMSBundle\Entity\User: bcrypt
+        
+    role_hierarchy:
+        ROLE_ADMIN: [ROLE_USER]
+        
+    providers:
+        chain_providers:
+            chain:
+                providers: [in_memory, user_db]
+                
+        in_memory:
+            memory:
+                users:
+                    admin: { password: standons4321, roles: ROLE_ADMIN }
+                    
+        user_db:
+            entity: { class: CustomCMSBundle:User, property: username }
+            
+    firewalls:
+        main:
+            pattern: /.*
+            form_login:
+                login_path: /
+                check_path: /login_check
+                success_handler: redirect.after.login
+             
+            logout:
+                path: /logout
+                target: /login
+            security: true
+            anonymous: true
+            
+    access_control:
+        - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: /adminhome, roles: ROLE_ADMIN  }
+        - { path: /cms/user, roles: ROLE_ADMIN }
+        - { path: /.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+      

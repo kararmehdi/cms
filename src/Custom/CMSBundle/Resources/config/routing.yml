@@ -1,0 +1,40 @@
+custom_cms_cms_upload:
+    resource: "@CustomCMSBundle/Resources/config/routing/document.yml"
+    prefix:   /cms/upload
+
+custom_cms_cms_user:
+    resource: "@CustomCMSBundle/Resources/config/routing/user.yml"
+    prefix:   /cms/user
+
+custom_cms_homepage:
+    path:     /
+    defaults: { _controller: CustomCMSBundle:Security:login }
+
+login:
+    path: /normal
+    defaults: { _controller: CustomCMSBundle:Default:index }
+    
+login_check:
+    path: /login_check
+    
+logout:
+    pattern: /logout
+    
+
+    
+admin:
+    path: /adminhome
+    defaults: { _controller: CustomCMSBundle:Security:adminhomepage }
+    
+custom_cms_cms_user_show:
+    path: /cms/user
+    defaults: { _controller: CustomCMSBundle:User:index }
+    
+custom_cms_cms_user_new:
+    path: /cms/user/new
+    defaults: { _controller: CustomCMSBundle:User:new }
+    
+post:
+    resource: "@CustomCMSBundle/Controller/DocumentController.php"
+    type:     annotation
+    

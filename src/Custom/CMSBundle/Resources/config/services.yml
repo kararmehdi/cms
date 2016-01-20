@@ -1,0 +1,8 @@
+services:
+     redirect.after.login:
+         class: Custom\CMSBundle\Redirection\AfterLoginRedirection
+         arguments: [@router]
+#    custom_cms.example:
+#        class: Custom\CMSBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+

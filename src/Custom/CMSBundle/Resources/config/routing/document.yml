@@ -1,0 +1,30 @@
+cms_upload:
+    path:     /
+    defaults: { _controller: "CustomCMSBundle:Document:index" }
+
+cms_upload_show:
+    path:     /{id}/show
+    defaults: { _controller: "CustomCMSBundle:Document:show" }
+
+cms_upload_new:
+    path:     /new
+    defaults: { _controller: "CustomCMSBundle:Document:new" }
+
+cms_upload_create:
+    path:     /create
+    defaults: { _controller: "CustomCMSBundle:Document:create" }
+    methods:  POST
+
+cms_upload_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CustomCMSBundle:Document:edit" }
+
+cms_upload_update:
+    path:     /{id}/update
+    defaults: { _controller: "CustomCMSBundle:Document:update" }
+    methods:  [POST, PUT]
+
+cms_upload_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CustomCMSBundle:Document:delete" }
+    methods:  [POST, DELETE]

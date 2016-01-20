@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    
+   
+    <head>
+           <div id='cssmenu'>
+    <ul>
+   <li><a href="{{ path('admin')}}" >Home</a></li>
+   <li class='active'><a href="{{ path('custom_cms_cms_user_show')}}" >Users</a></li>
+  
+  </ul>
+          </div>
+</head>
+<header>
+    <h1>User list</h1>
+</header>
+
+
+        
+                <div class="CSS_Table_Example" style="width:1000px;height:150px;">
+			<table >
+                            
+				<tr> 
+					<td>
+						ID
+					</td>
+					<td >
+						USERNAME
+					</td>
+					<td>
+						PASSWORD
+					</td>
+                                        	<td>
+						ACTIONS
+					</td>
+				
+			</tr>	
+                              {% for entity in entities %}
+                                  <tr>
+                                      <td><a   href="{{ path('cms_user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                      <td>{{ entity.username }}</td>
+                                     <td>{{ entity.password|slice(0,10) }}</td>
+                                     <td><a href="{{ path('cms_user_edit', { 'id': entity.id })  }}">Edit</a></td>
+                                  </tr>
+					
+					
+				 {% endfor %}
+				
+			</table>
+		</div>
+        <ul>
+       
+        <form action="{{path('cms_user_new') }}" method="post">
+ 
+
+    
+   
+ 
+            <input id="input" type="submit" value="Create New User">
+
+
+    
+</form>
+       
+    </ul>
+    {% endblock %}

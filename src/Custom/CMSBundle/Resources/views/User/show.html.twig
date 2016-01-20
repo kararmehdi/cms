@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+   
+   
+    <head>
+           <div id='cssmenu'>
+    <ul>
+   <li class='active'><a href="{{ path('custom_cms_homepage')}}" >Home</a></li>
+   <li><a href='#'>Products</a></li>
+   <li><a href='#'>Company</a></li>
+   <li><a href='#'>Contact</a></li>
+  </ul>
+          </div>
+</head>
+    <h1>User</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ entity.username }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ entity.password|slice(0,20) }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('cms_user') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('cms_user_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
