@@ -7,72 +7,85 @@
            <div id='cssmenu'>
     <ul>
    <li class='active'><a href="{{ path('custom_cms_homepage')}}" >Home</a></li>
-   <li><a href='#'>Products</a></li>
-   <li><a href='#'>Company</a></li>
-   <li><a href='#'>Contact</a></li>
+   <li><a href='{{ path('sendMail')}}'>Contact</a></li>
   </ul>
           </div>
 </head>
-      <body>
-       
-<header>
-        <h1>WELCOME ONBOARD</h1>
+     
+       <header>
+        <h1 class="fade-in">WELCOME ONBOARD</h1>
 </header>
-   <article id="cc-slider">
-      <input checked="checked" name="cc-slider" id="slide1" type="radio">
-      <input name="cc-slider" id="slide2" type="radio">
-      <input name="cc-slider" id="slide3" type="radio">
-      <input name="cc-slider" id="slide4" type="radio">
-      <input name="cc-slider" id="slide5" type="radio">
-      <div id="cc-slides">
-        <div id="overflow">
-          <div class="inner">
-            <article>
-              <div class="cctooltip">
-                <h3>Experiences</h3>
-                
-              </div>
-              <img src="images/slide-1.jpg"> 
-            </article>
-            <article>
-              <div class="cctooltip">
-                <h3>Abstract Retro Photography</h3>
-                <h4>By <a href="#">codeconvey</a></h4>
-              </div>
-              <img src="images/slide-2.jpg"> </article>
-            <article>
-              <div class="cctooltip">
-                <h3>Street Photography</h3>
-                <h4>By <a href="#">codeconvey</a></h4>
-              </div>
-              <img src="images/slide-3.jpg"> </article>
-            <article>
-              <div class="cctooltip">
-                <h3>Portrait / Woman / Photography</h3>
-                <h4>By <a href="#">codeconvey</a></h4>
-              </div>
-              <img src="images/slide-4.jpg"> </article>
-            <article>
-              <div class="cctooltip">
-                <h3>Fashion / Sport / Photography</h3>
-                <h4>By <a href="#">codeconvey</a></h4>
-              </div>
-              <img src="images/slide-5.jpg"> </article>
-          </div>
-        </div>
-      </div>
-      <div id="controls">
-        <label for="slide1"></label>
-        <label for="slide2"></label>
-        <label for="slide3"></label>
-        <label for="slide4"></label>
-        <label for="slide5"></label>
-      </div>
-    </article>
+
+	
+<div id="container">
+
+	<div id="wrapper">
+		
+		
+            <br/>
+            <br/>
+		<input checked="checked" name="wrapper" id="slide1"  type="radio">
+		<input name="wrapper" id="slide2" type="radio">
+		<input name="wrapper" id="slide3" type="radio">
+		<input name="wrapper" id="slide4" type="radio">
+		<input name="wrapper" id="slide5" type="radio">
+                <input name="wrapper" id="slide6" type="radio">
+  
+		<div id="reveslides">
+			 <div id="hide">
+			 	<div class="animation">
+					<div class="slide">
+						<img src="images/slide-1.jpg">
+						<div class="tooltip"><h1>Skill-1</h1></div>
+					</div>
+					<div class="slide">
+						<img src="images/slide-2.jpg">
+						<div class="tooltip"><h1>Skill-2</h1></div>
+					</div>
+					<div class="slide">
+						<img src="images/slide-3.jpg">
+						<div class="tooltip"><h1>Skill-3</h1></div>
+					</div>
+					<div class="slide">
+						<img src="images/slide-4.jpg">
+						<div class="tooltip"><h1>Skill-4</h1></div>
+					</div>
+					<div class="slide">
+						<img src="images/slide-5.jpg">
+						<div class="tooltip"><h1>Skill-5</h1></div>
+					</div>
+                                    <div class="slide">
+						<img src="images/slide-6.jpg">
+						<div class="tooltip"><h1>Skill-6</h1></div>
+					</div>
+					 
+				</div>
+			 </div>
+		</div>
+		
+		<div id="controls">
+			<label for="slide1"></label>
+			<label for="slide2"></label>
+			<label for="slide3"></label>
+			<label for="slide4"></label>
+			<label for="slide5"></label>
+                        <label for="slide6"></label>
+		</div>
+		
+		<div id="active">
+			<label for="slide1"></label>
+			<label for="slide2"></label>
+			<label for="slide3"></label>
+			<label for="slide4"></label>
+			<label for="slide5"></label>
+                        <label for="slide6"></label>
+		</div>
+				
+	  		
+	</div>
 </div>
-    </body>  
     
-    <footer>
+    <footer class="fade-in">
 		&copy: KMH 2014 | karar.habib2@metropolia.fi | <a href="http://metropolia.fi">Metropolia.fi</a>
 	</footer>
         {% endblock %}

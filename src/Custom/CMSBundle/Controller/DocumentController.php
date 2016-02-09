@@ -232,6 +232,7 @@ class DocumentController extends Controller
     
     
   
+    
     /**
      * Serve a file by forcing the download
      *
@@ -244,9 +245,8 @@ class DocumentController extends Controller
          * or "internal"
          */
         $basePath = $this->container->getParameter('kernel.root_dir') . '/../web/uploads/documents';
-
         $filePath = $basePath.'/'.$filename;
-echo $filePath;
+
         // check if file exists
         $fs = new FileSystem();
         if (!$fs->exists($filePath)) {
@@ -257,13 +257,10 @@ $response = new BinaryFileResponse($filePath);
     ResponseHeaderBag::DISPOSITION_ATTACHMENT,
     $filename
 );
-
 $response->headers->set('Content-Disposition', $d);
 return $response;
         
-
     
     }
-    
 
 }

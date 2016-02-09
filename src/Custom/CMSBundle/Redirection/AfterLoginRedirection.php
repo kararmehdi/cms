@@ -1,9 +1,5 @@
 <?php
-/**
- * @copyright  Copyright (c) 2009-2014 Steven TITREN - www.webaki.com
- * @package    Webaki\UserBundle\Redirection
- * @author     Steven Titren <contact@webaki.com>
- */
+
 namespace Custom\CMSBundle\Redirection;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -38,7 +34,7 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
         }, $roles);
         // If is a admin or super admin we redirect to the backoffice area
         if (in_array('ROLE_ADMIN', $rolesTab, true))
-            $redirection = new RedirectResponse($this->router->generate('admin'));
+            $redirection = new RedirectResponse($this->router->generate('login'));
         // otherwise, if is a commercial user we redirect to the crm area
         elseif (in_array('ROLE_USER', $rolesTab, true))
             $redirection = new RedirectResponse($this->router->generate('login'));

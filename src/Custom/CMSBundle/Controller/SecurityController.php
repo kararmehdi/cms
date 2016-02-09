@@ -5,6 +5,10 @@ namespace Custom\CMSBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
+use Custom\CMSBundle\Form\ContactType;
+
+
+
 
 class SecurityController extends Controller
 {
@@ -30,6 +34,7 @@ class SecurityController extends Controller
                 );
     }
     public function adminhomepageAction(){
-        return $this->render('CustomCMSBundle:Security:adminhomepage.html.twig');
+        return $this->render('CustomCMSBundle:Default:index.html.twig');
     }
+       
 }
